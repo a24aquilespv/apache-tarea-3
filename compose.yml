@@ -10,8 +10,8 @@ services:
     networks:
       redeapache:
         aliases:
-          - exemplo.lan
-          - www.exemplo.lan
+          - omeusitio.lan
+          - www.omeusitio.lan
     develop:
       watch:
         - path: ./apache/test1.conf
