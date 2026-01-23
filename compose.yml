@@ -4,8 +4,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./apache/tarefa1.conf:/etc/apache2/sites-enabled/tarefa1.conf
-      - ./exemplo.lan:/opt/web/exemplo.lan
+      - ./apache/tarefa3.conf:/etc/apache2/sites-enabled/tarefa3.conf
+      - ./omeusitio.lan:/opt/web/omeusitio.lan
 
     networks:
       redeapache:
@@ -14,11 +14,11 @@ services:
           - www.omeusitio.lan
     develop:
       watch:
-        - path: ./apache/test1.conf
+        - path: ./apache/tarefa3.conf
           action: restart
 
   cliente:
-    image: brunosct/debian13firefox
+    image: a24aquilespv/cliente_firefox
     hostname: cliente
     networks:
       - redeapache
