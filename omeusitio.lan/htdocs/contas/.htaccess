@@ -1,0 +1,18 @@
+AuthType Basic
+AuthName "Autentícate ahora mismo"
+AuthBasicProvider file
+AuthGroupFile /opt/web/omeusitio.lan/.htbasicgroups
+AuthUserFile /opt/web/omeusitio.lan/.htcontas_passwords
+
+<RequireAll>
+    <RequireAny>
+        Require user manolo
+        <RequireAll>
+            Require group directivos
+            Require group accionistas
+        </RequireAll>
+    </RequireAny>
+    <RequireNone>
+        Require group temporais
+    </RequireNone>
+</RequireAll>

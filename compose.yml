@@ -7,6 +7,7 @@ services:
       - ./apache/tarefa3.conf:/etc/apache2/sites-enabled/tarefa3.conf
       - ./omeusitio.lan:/opt/web/omeusitio.lan
       - ./apache/digest_passwords:/opt/web/omeusitio.lan/.htdigestpasswords
+      - ./apache/basic_groups:/opt/web/omeusitio.lan/.htbasicgroups
 
     networks:
       redeapache:
