@@ -5,5 +5,7 @@ RUN apt update && apt install -y apache2 && apt clean && rm -rf /var/lib/apt/lis
 RUN a2enmod ssl
 EXPOSE 80
 
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+# CMD ["apache2ctl", "-D", "FOREGROUND"]
 
+COPY --chown=root:root --chmod=744 ./entrypoint.sh /docker/entrypoint.sh
+ENTRYPOINT [ "/docker/entrypoint.sh" ]

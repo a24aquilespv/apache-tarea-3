@@ -1,0 +1,13 @@
+# Module: mod_authz_host
+
+# Permitir acceso a una determinada dirección ip o subred
+# Require ip 192.168.58.128/25
+
+# No permitir acceso desde esta subred
+<RequireAll>
+    # Permitir el acceso desde cualquier dirección IP
+    Require all granted
+
+    # Require not no deniega, simplement excluye. Excluir una IP/subred.
+    Require not ip 192.168.58.128/25
+</RequireAll>
