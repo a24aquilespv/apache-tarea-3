@@ -6,6 +6,7 @@ services:
     volumes:
       - ./apache/tarefa3.conf:/etc/apache2/sites-enabled/tarefa3.conf
       - ./omeusitio.lan:/opt/web/omeusitio.lan
+      - ./apache/digest_passwords:/opt/web/omeusitio.lan/.htdigestpasswords
 
     networks:
       redeapache:
@@ -29,16 +30,16 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
 
-  cliente2:
-    image: a24aquilespv/cliente_firefox
-    hostname: cliente2
-    networks:
-      redeapache:
-        ipv4_address: 192.168.58.132
-    environment:
-      - DISPLAY=${DISPLAY}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+  # cliente2:
+  #   image: a24aquilespv/cliente_firefox
+  #   hostname: cliente2
+  #   networks:
+  #     redeapache:
+  #       ipv4_address: 192.168.58.132
+  #   environment:
+  #     - DISPLAY=${DISPLAY}
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix
 
 networks:
 # subredbloqueada:
