@@ -45,7 +45,6 @@ services:
       # - /tmp/.X11-unix:/tmp/.X11-unix
 
 networks:
-# subredbloqueada:
   redeapache:
     driver: bridge
     ipam:
