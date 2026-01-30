@@ -31,18 +31,18 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
 
-  # Este cliente solo existe para comprobar que no puede acceder al directorio
-  # /datos, al estar dentro de la subred 192.168.58.128/25
-  cliente2:
-    image: a24aquilespv/cliente_firefox
-    hostname: cliente2
-    networks:
-      redeapache:
-        ipv4_address: 192.168.58.150
-    environment:
-      - DISPLAY=${DISPLAY}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+  # # Este cliente solo existe para comprobar que no puede acceder al directorio
+  # # /datos, al estar dentro de la subred 192.168.58.128/25
+  # cliente2:
+    # image: a24aquilespv/cliente_firefox
+    # hostname: cliente2
+    # networks:
+      # redeapache:
+        # ipv4_address: 192.168.58.150
+    # environment:
+      # - DISPLAY=${DISPLAY}
+    # volumes:
+      # - /tmp/.X11-unix:/tmp/.X11-unix
 
 networks:
 # subredbloqueada:
